@@ -32,7 +32,7 @@ public class AssertionHandle {
         Thread.sleep(2000);
     }
 
-
+    
     @Test(dependsOnMethods = "openUrl")
     public void hardassertion() throws InterruptedException {
         String title = page.title();
@@ -56,8 +56,6 @@ public class AssertionHandle {
         Thread.sleep(3000);
         softAssert.assertAll();
     }
-
-
 
 
     @AfterSuite

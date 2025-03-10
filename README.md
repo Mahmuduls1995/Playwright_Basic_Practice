@@ -62,6 +62,8 @@ The `CheckboxHandling.java` file contains examples of how to handle checkboxes u
 
 The `ScrollHandaling.java` file contains examples of how to perform scrolling actions using Playwright.
 
+
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
