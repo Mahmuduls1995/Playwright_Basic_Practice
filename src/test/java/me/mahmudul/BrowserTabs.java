@@ -23,12 +23,36 @@ public class BrowserTabs {
         page = browserContext.newPage();
     }
 
-    @Test
+//    @Test
     public void openUrl() throws InterruptedException {
+        Page fistTab = browserContext.newPage();
+        fistTab.navigate("https://testing-and-learning-hub.vercel.app/Selenium/pages/browser_windows.html");
         Thread.sleep(2000);
-        page.navigate("https://testing-and-learning-hub.vercel.app");
+
+        Page secondTab = browserContext.newPage();
+        secondTab.bringToFront();
+        secondTab.navigate("https://testing-and-learning-hub.vercel.app");
         Thread.sleep(2000);
+
+        fistTab.bringToFront();
+        Thread.sleep(2000);
+
     }
+
+    @Test
+    public void windowHandle() throws InterruptedException {
+        page.navigate("https://testing-and-learning-hub.vercel.app/Selenium/pages/browser_windows.html");
+        Thread.sleep(3000);
+
+        Page secondWindow = browser.newContext().newPage();
+        secondWindow.bringToFront();
+        secondWindow.navigate("https://testing-and-learning-hub.vercel.app");
+        Thread.sleep(4000);
+
+        page.bringToFront();
+        Thread.sleep(4000);
+    }
+
 
 
     @AfterSuite
